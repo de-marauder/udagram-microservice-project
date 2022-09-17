@@ -6,11 +6,12 @@ node_js:
 # Build docker images using docker-compose
 services:
   - docker
-  - docker-compose
 
 # Pre-testing installs
 install:
-  - echo "nothing needs to be installed"
+  - sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - sudo chmod +x /usr/local/bin/docker-compose
+  - docker-compose --version
 
 # Scripts to be run such as tests
 before_script:
