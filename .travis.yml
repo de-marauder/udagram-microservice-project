@@ -1,6 +1,12 @@
+#  Language
+language: node_js
+node_js:
+  - 13
+
 # Build docker images using docker-compose
 services:
   - docker
+  - docker-compose
 
 # Pre-testing installs
 install:
