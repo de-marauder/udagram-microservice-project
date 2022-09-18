@@ -8,5 +8,4 @@ RUN npm ci
 # Bundle app source
 COPY . .
 EXPOSE 8080
-CMD [ "npm", "run", "tsc" ]
-RUN node ./www/server.js
+CMD [ "npm", "run", "prod" ]
