@@ -9,4 +9,4 @@ RUN npm ci
 COPY . .
 EXPOSE 8080
 CMD [ "npm", "run", "tsc" ]
-RUN [ "node", "./www/server.js" ]
+RUN node /www/server.js
