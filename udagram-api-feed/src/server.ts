@@ -8,8 +8,10 @@ import bodyParser from 'body-parser';
 import {config} from './config/config';
 import {V0_FEED_MODELS} from './controllers/v0/model.index';
 
+console.log("feed server entered...");
 
 (async () => {
+  console.log("feed server code begin...");
   await sequelize.addModels(V0_FEED_MODELS);
 
   console.debug("Initialize database connection...");

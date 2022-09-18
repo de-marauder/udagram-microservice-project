@@ -8,8 +8,10 @@ import bodyParser from 'body-parser';
 import {config} from './config/config';
 import {V0_USER_MODELS} from './controllers/v0/model.index';
 
+console.log("user server entered...");
 
 (async () => {
+  console.log("user server code begin...");
   await sequelize.addModels(V0_USER_MODELS);
 
   console.debug("Initialize database connection...");
