@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-feed-api-deployment
+  labels:
+    app: backend-feed-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-feed-api
+  template:
+    metadata:
+      labels:
+        app: backend-feed-api
+    spec:
+      containers:
+        - name: backend-feed-api
+          image: demarauder/udagram-api-feed:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: udagram-config
+            - secretRef:
+                name: aws-secret
+            - secretRef:
+                name: postgres-secret           
+          resources:
+            requests:
+              memory: "126Mi"
+              cpu: "250m"
+            

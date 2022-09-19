@@ -30,6 +30,7 @@ console.log("feed server entered...");
       'Origin', 'X-Requested-With',
       'Content-Type', 'Accept',
       'X-Access-Token', 'Authorization',
+      'Access-Control-Allow-Origin', '*'
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
